@@ -70,3 +70,7 @@ export function* myGenerator() {
     yield "hello";
     return "world";
 }
+
+export function myFunc() {
+    return "world";
+}
