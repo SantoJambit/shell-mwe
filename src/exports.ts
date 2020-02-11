@@ -65,3 +65,8 @@ export interface CustomMerged {
 // The issue: `keyof Merged` becomes "A" | "B" | "C" | "D"
 // Probably related to https://github.com/microsoft/TypeScript/issues/27171
 export type MergedKeys = keyof Merged;
+
+export function* myGenerator() {
+    yield "hello";
+    return "world";
+}
