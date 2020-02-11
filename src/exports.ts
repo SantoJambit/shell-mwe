@@ -47,3 +47,21 @@ export const TEST_ARRAY = [
 ];
 
 export const IS_TELEPHONE = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
+
+export interface CustomMerged {
+
+}
+
+export interface Merged extends CustomMerged {
+    A: string;
+    B: string;
+}
+
+export interface CustomMerged {
+    C: string;
+    D: string;
+}
+
+// The issue: `keyof Merged` becomes "A" | "B" | "C" | "D"
+// Probably related to https://github.com/microsoft/TypeScript/issues/27171
+export type MergedKeys = keyof Merged;
