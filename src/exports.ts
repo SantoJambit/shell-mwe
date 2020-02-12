@@ -8,7 +8,12 @@ export type Fail1 = string;
 export type Fail2 = 'hello' | 'world';
 
 export * from './two';
+export * from './three';
 
+// These two files have the exact same content.. only difference: one is .ts and one is .tsx.
+// Both don't end up in the declaration. But five gives a warning 'Could not resolve type at position 0 of "/.../src/five.ts"'
+export { default as four } from './four';
+export { default as five } from './five';
 
 const test1 = {
     foo: '',
@@ -65,6 +70,9 @@ export interface CustomMerged {
 // The issue: `keyof Merged` becomes "A" | "B" | "C" | "D"
 // Probably related to https://github.com/microsoft/TypeScript/issues/27171
 export type MergedKeys = keyof Merged;
+
+// Still happens on parameter types:
+export const mergedParams = (key: MergedKeys) => false;
 
 export function* myGenerator() {
     yield "hello";
