@@ -1,5 +1,6 @@
-import { Fail3 } from './one';
+import Fail3b, { Fail3 } from './one';
 
 export {
-    Fail3
+    Fail3,
+    Fail3b,
 }
