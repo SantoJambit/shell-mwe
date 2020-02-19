@@ -82,3 +82,5 @@ export function* myGenerator() {
 export function myFunc() {
     return "world";
 }
+
+export type Ternary<T = undefined> = (T extends undefined ? {} : { ternary: T; });
