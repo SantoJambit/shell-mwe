@@ -1,6 +1,5 @@
 // This file should contain all exports we want to give to the pilet.
 import styled from 'styled-components';
-import { createAction } from 'deox';
 
 import './extendApi';
 
@@ -9,6 +8,7 @@ export type Fail2 = 'hello' | 'world';
 
 export * from './two';
 export * from './three';
+export * from './deox';
 
 // These two files have the exact same content.. only difference: one is .ts and one is .tsx.
 // Both don't end up in the declaration. But five gives a warning 'Could not resolve type at position 0 of "/.../src/five.ts"'
@@ -41,10 +41,6 @@ export type MenuType = 'user' | 'footer';
 export interface MenuSettings {
     type: MenuType;
 }
-
-// This produces a different issue my real shell.. not sure why not here
-export const ACTION = 'ACTION';
-export const updateUserMetaDataStart = createAction(ACTION);
 
 export const TEST_ARRAY = [
     { value: 'one', label: 'ONE' },
