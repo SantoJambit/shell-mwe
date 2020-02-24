@@ -7,7 +7,7 @@ export const ACTION = 'ACTION';
 export const action1 = createAction(ACTION);
 
 // Taken from deox itself: 
-export declare type Action<TType extends string /** extends string gets dropped */, TPayload = undefined, TMeta = undefined>
+export type Action<TType extends string /** extends string gets dropped */, TPayload = undefined, TMeta = undefined>
     // Ternary brackets get dropped (unsure if this makes a difference)
     = TPayload extends undefined ? (TMeta extends undefined ? {
         type: TType;
