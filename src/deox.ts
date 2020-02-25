@@ -1,4 +1,4 @@
-import { createAction } from 'deox/dist/create-action';
+import { createAction } from 'deox';
 
 export const ACTION = 'ACTION';
 
