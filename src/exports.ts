@@ -102,3 +102,14 @@ C extends {
         : keyof REACT_STATICS | keyof KNOWN_STATICS | keyof C
 >]: S[key]
 };
+
+
+export class SomeClass {
+
+    public constructor(private value: string) {
+    }
+
+    foo() {
+        return this.value;
+    }
+}
